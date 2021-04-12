@@ -27,8 +27,12 @@ router.get('/login', function (req, res) {
 
 router.get('/register', function (req, res) {
     res.render('site/register')
-}
-)
+})
+
+router.get('/posts/new', function (req, res) {
+    res.render('site/addpost')
+})
+
 router.get('*', function (req, res) {
     res.status(404).send('Not Found')
 })
