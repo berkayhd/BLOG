@@ -18,37 +18,8 @@ app.use(express.static('public'))
 app.engine('handlebars', exphbs())
 app.set('view engine', 'handlebars')
 
-app.get('/', function (req, res) {
-    res.render('site/index')
-})
-
-app.get('/index', function (req, res) {
-    res.render('site/index')
-})
-
-app.get('/about', function (req, res) {
-    res.render('site/about')
-})
-
-app.get('/blog', function (req, res) {
-    res.render('site/blog')
-})
-
-app.get('/contact', function (req, res) {
-    res.render('site/contact')
-})
-
-app.get('/login', function (req, res) {
-    res.render('site/login')
-})
-
-app.get('/register', function (req, res) {
-    res.render('site/register')
-}
-)
-app.get('*', function (req, res) {
-    res.status(404).send('Not Found')
-})
+const main = require('./routes/main')
+app.use('/', main)
 
 
 
