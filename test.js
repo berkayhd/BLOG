@@ -9,10 +9,23 @@ const Post = require('./models/post')
   useCreateIndex: true
 });
 
-Post.create({
-    title:  'benim ilk post başlığım',
-    content: 'ilk içik yazım,lala lallalqwleqwl q w e'
+/* Post.findByIdAndDelete('60743c1d08d40003e46ddd18', (error, post)=>{
+    console.log(error, PopStateEvent)
+}) */
+
+/* Post.findByIdAndUpdate('60743b5efe5c82301855f959',{
+    title:"benim değiştirilmiş ilk başlığım"
+},(error, post)=>{
+    console.log(error, post)
+}) */
+
+/* Post.find({},(error, post)=>{
+    console.log(error, post)
+}) */
+
+/* Post.create({
+    title:  'İkinci post başlığım',
+    content: 'İkinci yazım,Lorem İpsum '
 },(error, post) => {
     console.log(error, post);
-}
-)
+}) */
