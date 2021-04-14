@@ -5,6 +5,7 @@ const app = express()
 const port = 3000
 const hostname = '127.0.0.1'
 const mongoose = require('mongoose');
+const bodyParser = require('body-parser')
 
 mongoose.connect('mongodb://127.0.0.1/nodeblog_db', {
   useNewUrlParser: true,
@@ -18,8 +19,14 @@ app.use(express.static('public'))
 app.engine('handlebars', exphbs())
 app.set('view engine', 'handlebars')
 
+app.use(express.urlencoded({ extended: true }));
+ 
+ app.use(express.json())
+
 const main = require('./routes/main')
 app.use('/', main)
+const posts = require('./routes/posts')
+app.use('/posts', posts)
 
 
 
